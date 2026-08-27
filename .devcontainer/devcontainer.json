@@ -1,0 +1,15 @@
+{
+  "name": "FreeDNS Codespace",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "containerEnv": {
+    "PORT": "3000",
+    "DATA_FILE": "/data/domains.json"
+  },
+  "forwardPorts": [3000],
+  "workspaceFolder": "/workspaces/freedns",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/freedns,type=bind,consistency=cached",
+  "postCreateCommand": "npm install",
+  "remoteUser": "node"
+}
